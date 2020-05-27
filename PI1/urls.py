@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from rest_framework import routers
+from luminosity import views
+
+router = routers.DefaultRouter()
+router.register(r'luminositys', views.LuminosityViewSet)
 
 urlpatterns = [
+    url(r'^', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

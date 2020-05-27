@@ -25,7 +25,7 @@ SECRET_KEY = 'yeuwxvahx=4fb!l&a+@an8rajzog6*i*2l#4ds=qsqdr7@4*82'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'luminosity',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'PI1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'pi1-eafit-db',
+         'USER': 'dgarciag@pi1-eafit-db-taller',
+         'PASSWORD': 'zeus259*',
+         'HOST': 'pi1-eafit-db-taller.mysql.database.azure.com',
+         'PORT': '3306',
     }
 }
 
